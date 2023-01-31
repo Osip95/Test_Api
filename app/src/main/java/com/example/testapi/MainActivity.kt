@@ -13,9 +13,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var okHttpClient:OkHttpClient
+    private lateinit var okHttpClient: OkHttpClient
     private lateinit var retrofit: Retrofit
-    private lateinit var tv:TextView
+    private lateinit var tv: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,10 +30,11 @@ class MainActivity : AppCompatActivity() {
             .client(okHttpClient)
             .build()
 
+
         val weatherApi = retrofit.create(WeatherApi::class.java)
         GlobalScope.launch {
             withContext(Dispatchers.Main) {
-              tv.text =  weatherApi.getWeather("Moscow").main.temp
+                tv.text = weatherApi.getWeather("Moscow").main.temp
             }
         }
 
