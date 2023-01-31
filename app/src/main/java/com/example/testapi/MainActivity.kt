@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             .client(okHttpClient)
             .build()
 
+
         val weatherApi = retrofit.create(WeatherApi::class.java)
         GlobalScope.launch {
             withContext(Dispatchers.Main) {

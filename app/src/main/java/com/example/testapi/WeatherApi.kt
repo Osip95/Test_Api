@@ -9,5 +9,5 @@ interface WeatherApi {
     suspend fun getWeather(
         @Query("q") query: String,
         @Query("appid") apiKey: String = "58b397ef6b2ac4874ee79550212748d0"
-    ) : Model
+    ) :  Model
 }
